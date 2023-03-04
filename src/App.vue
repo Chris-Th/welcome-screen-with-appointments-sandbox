@@ -140,7 +140,7 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   align-content: flex-start;
-  padding-inline: 5%;
+  padding-inline: 60px;
   margin: auto;
   
 }
@@ -156,7 +156,7 @@ export default {
    flex-direction: column;
    background-color: inherit;
    width: 100%;
-   height:fit-content;
+   height: fit-content;
    margin-inline: auto;
    padding-block: 1rem;
    padding-inline: auto;
@@ -174,7 +174,7 @@ export default {
    width: 100%;
    height:fit-content;
    margin-inline: auto;
-   margin-bottom: 1rem;
+   margin-bottom: 40px;
    padding-block: 2rem;
    padding-inline: 2rem;
    /*margin: 0 3rem 1.5rem;*/
@@ -188,6 +188,7 @@ export default {
    font-size: 62px;
    line-height: 75px;
    margin-bottom: 0;
+   margin-top: 50px;
  }
 
  .date {
@@ -205,20 +206,21 @@ export default {
    font-size: 28px;
    line-height: 36px; 
    margin-bottom:0;
-   margin-top: 10px;
+   margin-top: 5px;
  }
  
  .item-time {
    color: #EB5E00;
-   font-weight: bold;
+   font-weight: 900;
    padding:0;
  }
  .item-title {
    color: #FFBFAB;
-   font-weight: bolder;
+   font-weight: 900;
  }
  .item-description {
    color: #FFBFAB;
+   font-weight: 500;
  }
 
  .footer {
