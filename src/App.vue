@@ -2,49 +2,40 @@
   <!-- ===========================
   <img alt="Vue logo" src="./assets/logo.png">
   ============================ -->
-  <HelloWorld msg=""/>
+  <!-- <HelloWorld msg=""/> -->
   
   <div id="app">
-  
-    <div id="main-container" class="flex-container"> 
-      
-      <!-- Main title -->
-      <div class="top-title">
-        <h1>
-          {{ title }}
-        </h1>
-      </div>
+    <div id="main-frame">
+      <div id="main-container" class="flex-container"> 
+        
+        <!-- Main title -->
+        <div class="top-title">
+          <h1>
+            {{ title }}
+          </h1>
+        </div>
 
-      <!-- Current date subtitle -->
-      <h1 class="date">
-        {{ currentDate }}
-      </h1>
-      <div class="entries-container">
-        <ul v-if="entries && entries.length" class="entries-list" >
-          <li  class="entry-item" v-for="entry in entries" :key="entry.id">
-            <p class="item item-time">{{ entry[0] }} Uhr, {{ entry[1].replaceAll("/", ".") }} </p>
-            <p class="item item-title">{{ entry[2] }}</p>
-            <p class="item item-description">{{ entry[3] }}</p>
-          </li>
-        </ul>
-        <h1 v-else>Zur Zeit keine Events!</h1> 
+        <!-- Current date subtitle -->
+        <h1 class="date">
+          {{ currentDate }}
+        </h1>
+        <div class="entries-container">
+          <ul v-if="entries && entries.length" class="entries-list" >
+            <li  class="entry-item" v-for="entry in entries" :key="entry.id">
+              <p class="item item-time">{{ entry[0] }} Uhr, {{ entry[1].replaceAll("/", ".") }} </p>
+              <p class="item item-title">{{ entry[2] }}</p>
+              <p class="item item-description">{{ entry[3] }}</p>
+            </li>
+          </ul>
+          <h1 v-else>Zur Zeit keine Events!</h1> 
+        </div>
+      </div>
+      <div class="footer">
+        <img src="src/assets/STZH_SEB_Logo.png" alt="Avatar Logo"  style="width: 230px;" class=""> 
+        <img src="src/assets/Opportunity.png" alt="Avatar Logo" style="width: 200px;" class=""> 
+        <img src="src/assets/SAG_Logo_De.png" alt="Avatar Logo" style="width: 200px;" class=""> 
       </div>
     </div>
-
-    <nav class="navbar navbar-expand-sm fixed-bottom footer py-0">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="img/STZH_SEB_Logo.png" alt="Avatar Logo"  style="width: 230px;" class=""> 
-        </a>
-        <a class="navbar-brand" href="#">
-          <img src="img/Opportunity.png" alt="Avatar Logo" style="width: 200px;" class=""> 
-        </a>
-        <a class="navbar-brand" href="#">
-          <img src="img/SAG_Logo_De.png" alt="Avatar Logo" style="width: 200px;" class=""> 
-        </a>
-      </div>
-    </nav>  
-
   </div>
 </template>
 
@@ -132,11 +123,17 @@ export default {
   background-color: #ffffff;
  }
  
+  #main-frame {
+    width: 1080px;
+    height: 1920px;
+    margin: auto;
+  }
+
  .flex-container {
   display: flex;
   align-items:flex-start;
-  width: 1080px;
-  height: 1920px;
+  width: 100%;
+  height: 100%;
   justify-content: flex-start;
   flex-direction: column;
   align-content: flex-start;
@@ -223,11 +220,30 @@ export default {
    font-weight: 500;
  }
 
+ /* 
+ display: flex;
+  
+  width: 1080px;
+  height: 1920px;
+  
+  
+  align-content: flex-start;
+  
+  margin: auto;
+ */
+
  .footer {
-   width: 100%;
-   height: 130px;
-   padding: 0.5rem;
-   background-color: white;
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 20px;
+    position: sticky;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 130px;
+    background-color:blanchedalmond
  }
 
  .logo {
