@@ -6,14 +6,20 @@
   
   <div id="app">
   
-    <div id="main-container" class="flex-container">      
-      <h1 class="top-title pt-3">
-        {{ title }}
-      </h1>
+    <div id="main-container" class="flex-container"> 
+      
+      <!-- Main title -->
+      <div class="top-title">
+        <h1>
+          {{ title }}
+        </h1>
+      </div>
+
+      <!-- Current date subtitle -->
       <h1 class="date">
         {{ currentDate }}
       </h1>
-      <div class="entry-item">
+      <div class="entries-container">
         <ul v-if="entries && entries.length" class="entries-list" >
           <li  class="entry-item" v-for="entry in entries" :key="entry.id">
             <p class="item item-time">{{ entry[0] }} Uhr, {{ entry[1].replaceAll("/", ".") }} </p>
@@ -117,22 +123,61 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22");
 
  * {
-   font-family: inter;
+   font-family: Inter;
    box-sizing: border-box;
+ }
+
+ #app {
+  background-color: bisque;
  }
  
  .flex-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   width: 1080px;
-  height: 1920px;
+  max-height: 1920px;
   justify-content: center;
+  flex-direction: column;
+  align-content: flex-start;
+  padding-inline: 5%;
   
 }
 
-.main-container {
+#main-container {
+  /*background-color: #e8eff4b7;*/
   background-color: #E8EFF4;
 }
+
+.entries-container {
+   /*display: inline-block;*/
+   display: flex;
+   flex-direction: column;
+   background-color: inherit;
+   width: 100%;
+   height:fit-content;
+   margin-inline: auto;
+   padding-block: 1rem;
+   padding-inline: auto;
+ }
+
+ ul.entries-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+ }
+
+.entry-item {
+   /*display: inline-block;*/
+   background-color: #0F05A0;
+   width: 100%;
+   height:fit-content;
+   margin-inline: auto;
+   margin-bottom: 1rem;
+   padding-block: 2rem;
+   padding-inline: 2rem;
+   /*margin: 0 3rem 1.5rem;*/
+ }
+
 
 
  .top-title {
@@ -158,17 +203,7 @@ export default {
    line-height: 36px; 
    margin-bottom:0.1rem;
  }
- .entry-item {
-   display: inline-block;
-   background-color: #0F05A0;
-   width: 100%;
-   height:fit-content;
-   margin: auto;
-   padding-block: 2rem;
-   padding-inline: 2rem;
-   margin: 0 3rem 1.5rem;
  
- }
  .item-time {
    color: #EB5E00;
    font-weight: bold;
