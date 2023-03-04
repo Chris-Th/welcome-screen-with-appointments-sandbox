@@ -8,17 +8,18 @@
     <div id="main-frame">
       <div id="main-container" class="flex-container"> 
         
-        <!-- Main title -->
-        <div class="top-title">
-          <h1>
-            {{ title }}
+        <div class="header">
+          <!-- Main title -->
+          <div class="top-title">
+            <h1>
+              {{ title }}
+            </h1>
+          </div>
+          <!-- Current date subtitle -->
+          <h1 class="date">
+            {{ currentDate }}
           </h1>
         </div>
-
-        <!-- Current date subtitle -->
-        <h1 class="date">
-          {{ currentDate }}
-        </h1>
         <div class="entries-container">
           <ul v-if="entries && entries.length" class="entries-list" >
             <li  class="entry-item" v-for="entry in entries" :key="entry.id">
@@ -31,9 +32,9 @@
         </div>
       </div>
       <div class="footer">
-        <img src="src/assets/STZH_SEB_Logo.png" alt="Avatar Logo"  style="width: 230px;" class=""> 
-        <img src="src/assets/Opportunity.png" alt="Avatar Logo" style="width: 200px;" class=""> 
-        <img src="src/assets/SAG_Logo_De.png" alt="Avatar Logo" style="width: 200px;" class=""> 
+        <img :src="logoSTZH" alt="Logo STZH"  style="width: 260px;" class=""> 
+        <img :src="logOpp" alt="Logo Opportunity" style="width: 236px;" class=""> 
+        <img :src="logoSAG" alt="Logo SAG" style="width: 273px;" class=""> 
       </div>
     </div>
   </div>
@@ -54,6 +55,9 @@ export default {
     api_token: "AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU",
     entries: [],
     currentDate: "",
+    logoSTZH: require('./assets/STZH_SEB_Logo.png'),
+    logOpp: require('./assets/Opportunity.png'),
+    logoSAG: require('./assets/SAG_Logo_De.png')
   };
 },
 
@@ -147,6 +151,14 @@ export default {
   background-color: #E8EFF4;
 }
 
+.header {
+  background-color: #E8EFF4;
+  position: sticky;
+    top: 0;
+    margin: 0;
+    width: 100%;
+}
+
 .entries-container {
    /*display: inline-block;*/
    display: flex;
@@ -237,13 +249,13 @@ export default {
     align-items:center;
     flex-direction: row;
     justify-content: space-between;
-    padding-inline: 20px;
+    padding-inline: 40px;
     position: sticky;
     bottom: 0;
     margin: 0;
     width: 100%;
     height: 130px;
-    background-color:blanchedalmond
+    background-color: white;
  }
 
  .logo {
