@@ -120,26 +120,28 @@ export default {
 
 <style>
      
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22");
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
  * {
-   font-family: Inter;
+   font-family: Inter, sans-serif, Helvetica;
    box-sizing: border-box;
  }
 
  #app {
-  background-color: bisque;
+  background-color: #ffffff;
  }
  
  .flex-container {
   display: flex;
-  align-items: stretch;
+  align-items:flex-start;
   width: 1080px;
-  max-height: 1920px;
-  justify-content: center;
+  height: 1920px;
+  justify-content: flex-start;
   flex-direction: column;
   align-content: flex-start;
   padding-inline: 5%;
+  margin: auto;
   
 }
 
@@ -180,28 +182,30 @@ export default {
 
 
 
- .top-title {
+ .top-title > h1 {
    color: #323D4A;
    font-weight: 900;
    font-size: 62px;
    line-height: 75px;
-   margin-bottom: 0.8rem;
+   margin-bottom: 0;
  }
 
  .date {
    color: #9AA7B1;
    font-size: 62px;
    line-height: 72px;
-   font-weight: 100;
+   font-weight: 500;
    font-style: normal;
    display: block;
+   margin-block: 21px;
  }
 
  .item {
    
    font-size: 28px;
    line-height: 36px; 
-   margin-bottom:0.1rem;
+   margin-bottom:0;
+   margin-top: 10px;
  }
  
  .item-time {
