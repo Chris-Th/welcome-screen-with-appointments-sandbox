@@ -51,8 +51,8 @@ export default {
   data() {
 	return {
     title: "Welcome to Opportunity",
-    sheet_id: "1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4",
-    api_token: "AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU",
+    sheet_id: "1eYj2fR4zENBDj44B_2eNcLb9q5nw5jyuhQlhweDottM",
+    api_token: "AIzaSyDj-0jsLeXGGG7krtGwhojubzhsjKZ4rOI",
     entries: [],
     currentDate: "",
     logoSTZH: require('./assets/STZH_SEB_Logo.png'),
@@ -61,6 +61,9 @@ export default {
   };
 },
 
+// My API-Key: AIzaSyDj-0jsLeXGGG7krtGwhojubzhsjKZ4rOI
+// Project Name on console.cloud.google.com: "Welcome Screen Opportunity"
+// https://docs.google.com/spreadsheets/d/1eYj2fR4zENBDj44B_2eNcLb9q5nw5jyuhQlhweDottM/edit?usp=share_link
  
 
   computed: {
