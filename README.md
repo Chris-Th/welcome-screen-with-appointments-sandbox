@@ -1,4 +1,4 @@
-# chris-first-vue
+# Opportunity Welcome Screen
 
 ## Project setup
 ```
