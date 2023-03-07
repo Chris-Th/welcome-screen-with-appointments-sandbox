@@ -1,8 +1,5 @@
 <template>
-  <!-- ===========================
-  <img alt="Vue logo" src="./assets/logo.png">
-  ============================ -->
-  <!-- <HelloWorld msg=""/> -->
+  
   
   <div id="app">
     <div id="main-frame">
@@ -23,10 +20,15 @@
         <div class="entries-container">
           <ul v-if="entries && entries.length" class="entries-list" >
             <li  class="entry-item" v-for="entry in entries" :key="entry.id">
+              <!--
               <p class="item item-time">{{ entry[0] }} Uhr, {{ entry[1].replaceAll("/", ".") }} </p>
               <p class="item item-title">{{ entry[2] }}</p>
               <p class="item item-description">{{ entry[3] }}</p>
-            </li>
+              -->
+
+              <!-- check out vue components docs -->
+              <EventEntry :entry="entry" />
+             </li>
           </ul>
           <h1 v-else>Zur Zeit keine Events!</h1> 
         </div>
@@ -41,8 +43,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import { time } from 'console';
 
 import axios from "axios"; // axios is a library for making HTTP requests to the backend
 
@@ -74,13 +74,17 @@ export default {
 
 
   methods: {
-  /*  getData() {
-      this.entries = [ 
-        // time, date, title, description
-        ["8.25", "11/11/1111", "Feier", "failure"],
-        ["17.25", "22/22/2222", "wedding", "of a paper clip"]
-      ] 
-    },*/
+
+    // =========== static example: ==============
+    /*  
+      getData() {
+        this.entries = [ 
+          // time, date, title, description
+          ["8.25", "11/11/1111", "Feier", "failure"],
+          ["17.25", "22/22/2222", "wedding", "of a paper clip"]
+        ] 
+      },
+    */
 
     getData() {
       axios.get(this.gsheet_url).then((response) => {
@@ -235,17 +239,7 @@ export default {
    font-weight: 500;
  }
 
- /* 
- display: flex;
-  
-  width: 1080px;
-  height: 1920px;
-  
-  
-  align-content: flex-start;
-  
-  margin: auto;
- */
+ 
 
  .footer {
     display: flex;
