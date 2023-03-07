@@ -27,7 +27,7 @@
               -->
 
               <!-- check out vue components docs -->
-              <EventEntry :entry="entry" />
+              <eventEntry :entry="entry" />
              </li>
           </ul>
           <h1 v-else>Zur Zeit keine Events!</h1> 
@@ -45,9 +45,10 @@
 <script>
 
 import axios from "axios"; // axios is a library for making HTTP requests to the backend
-
+import eventEntry from "./components/eventEntry.vue";
 export default {
   name: 'App',
+  components: { eventEntry },
   data() {
 	return {
     title: "Welcome to Opportunity",
