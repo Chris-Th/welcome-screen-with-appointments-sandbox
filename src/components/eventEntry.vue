@@ -4,6 +4,12 @@
     <p class="item item-description">{{ entry[3] }}</p>
 </template>
 
+<!--
+    
+-->
+
+
+
 <script>
     export default {
         props: ['entry'],

@@ -87,19 +87,46 @@ export default {
       },
     */
 
+
+    /* ========= old version: ============= */
     getData() {
       axios.get(this.gsheet_url).then((response) => {
         this.entries = response.data.valueRanges[0].values;
       });
     },
-
+    /* =============== */
+    /* ========== new version, filtered and sorted by date: 
+    getData() {
+          axios.get(this.gsheet_url).then((response) => {
+             // Erhalte die Zeilen aus der Antwort des API-Aufrufs
+            const rows = response.data.valueRanges[0].values;
+            // Erhalte das aktuelle Datum
+            const currentDate = new Date();
+            // Filtere die Zeilen, die ein Datum haben, das heute oder später ist
+            const filteredRows = rows.filter(row => {
+              const dateParts = row[1].split("/");
+              const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+              return rowDate >= currentDate;
+            });
+             // Sortiere die gefilterten Zeilen nach Datum
+            this.entries = filteredRows.sort((row1, row2) => {
+              const dateParts1 = row1[1].split("/");
+              const dateParts2 = row2[1].split("/");
+              const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
+              const date2 = new Date(`${dateParts2[2]}-${dateParts2[1]}-${dateParts2[0]}`);
+              return date1 - date2;
+              
+            });
+          });
+        },
+    ================ */
     
     updateCurrentDate() {
       let today = new Date();
       this.counter++;
       this.currentDate = `${today.getDate()}.${today.getMonth()}.${today.getFullYear()}`;
       this.currentTime = ``;
-
+      console.log(this.currentDate)
     },
     refreshData() {
       this.updateCurrentDate();
@@ -108,10 +135,40 @@ export default {
   },
   mounted() {
     this.refreshData(); // get first initial data then wait for the next
-    setInterval(this.refreshData, 18000000); // wait 1 min for next update
+    setInterval(this.refreshData, 1800000); // wait 30 min for next update
   },
 };
 
+const d = new Date();
+const currentMs = d.getTime();
+console.log(currentMs)
+
+
+/* ============= Additional feature to research ==============
+
+//Neue Version
+        
+
+
+hide expired event entries: 
+
+let currentMs = currentDate to timestamp;
+let entryDateMs = entry[1] to ms
+
+if currentMs > {
+  hide this entry in entries
+}
+
+const entryMs(date) => {
+  const d = new Date(date);
+  return d.getTime();
+}
+entryMs(entry[1]);
+console.log(entryMs;)
+
+
+
+=========================== */
 
 
 
@@ -154,6 +211,7 @@ export default {
   align-content: flex-start;
   padding-inline: 60px;
   margin: auto;
+  overflow: hidden;
   
 }
 
