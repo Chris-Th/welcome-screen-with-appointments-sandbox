@@ -126,10 +126,13 @@ export default {
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
+
  * {
    font-family: Inter, sans-serif, Helvetica;
    box-sizing: border-box;
+   white-space: normal;
  }
+
 
  #app {
   background-color: #ffffff;
@@ -173,7 +176,7 @@ export default {
    flex-direction: column;
    background-color: inherit;
    width: 100%;
-   height: fit-content;
+   height: auto;
    margin-inline: auto;
    padding-block: 1rem;
    padding-inline: auto;
