@@ -139,7 +139,7 @@ export default {
  }
  
   #main-frame {
-    width: 1080px;
+    max-width: 1080px;
     height: 1920px;
     margin: auto;
   }
