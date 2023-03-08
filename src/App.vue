@@ -95,28 +95,37 @@ export default {
     */
 
 
-    /* ========= old version: ============= */
+    /* ========= default version: ============= */
     getData() {
       axios.get(this.gsheet_url).then((response) => {
         this.entries = response.data.valueRanges[0].values;
       });
     },
-    /* =============== */
-    /* ========== new version, filtered and sorted by date: 
+   /*  =============== */
+
+   
+    /* ========== filtered and sorted by date (work in progress) =============
     getData() {
           axios.get(this.gsheet_url).then((response) => {
+
              // Erhalte die Zeilen aus der Antwort des API-Aufrufs
             const rows = response.data.valueRanges[0].values;
+
             // Erhalte das aktuelle Datum
             const currentDate = new Date();
+
             // Filtere die Zeilen, die ein Datum haben, das heute oder später ist
             const filteredRows = rows.filter(row => {
+              
               const dateParts = row[1].split("/");
               const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
               return rowDate >= currentDate;
+
             });
+
              // Sortiere die gefilterten Zeilen nach Datum
             this.entries = filteredRows.sort((row1, row2) => {
+
               const dateParts1 = row1[1].split("/");
               const dateParts2 = row2[1].split("/");
               const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
