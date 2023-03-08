@@ -1,9 +1,9 @@
 # Opportunity Welcome Screen
 
 ## Links 
-**[Welcome Screen]**(https://opportunity-by-muhmuhmiau.netlify.app/)
+[Welcome Screen](https://opportunity-by-muhmuhmiau.netlify.app/)
 
-**[Google spread sheet (add, remove, edit content)]**(https://docs.google.com/spreadsheets/d/1eYj2fR4zENBDj44B_2eNcLb9q5nw5jyuhQlhweDottM/edit#gid=0)
+[Google spread sheet (add, remove, edit content)](https://docs.google.com/spreadsheets/d/1eYj2fR4zENBDj44B_2eNcLb9q5nw5jyuhQlhweDottM/edit#gid=0)
 
 ## Project setup
 ```
