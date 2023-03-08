@@ -44,6 +44,13 @@
 
 <script>
 
+const leadingZero = function(n) {
+  if (n <= 9) {
+    return "0" + n;
+  }
+  return n
+};
+
 import axios from "axios"; // axios is a library for making HTTP requests to the backend
 import eventEntry from "./components/eventEntry.vue";
 export default {
@@ -120,11 +127,13 @@ export default {
           });
         },
     ================ */
+
+
     
     updateCurrentDate() {
       let today = new Date();
       this.counter++;
-      this.currentDate = `${today.getDate()}.${today.getMonth()}.${today.getFullYear()}`;
+      this.currentDate = `${leadingZero(today.getDate())}.${leadingZero(today.getMonth())}.${today.getFullYear()}`;
       this.currentTime = ``;
       console.log(this.currentDate)
     },
