@@ -142,7 +142,7 @@ export default {
     updateCurrentDate() {
       let today = new Date();
       this.counter++;
-      this.currentDate = `${leadingZero(today.getDate())}.${leadingZero(today.getMonth())}.${today.getFullYear()}`;
+      this.currentDate = `${leadingZero(today.getDate())}.${leadingZero(today.getMonth() + 1)}.${today.getFullYear()}`;
       this.currentTime = ``;
       console.log(this.currentDate)
     },
